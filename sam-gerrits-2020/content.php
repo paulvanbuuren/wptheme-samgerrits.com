@@ -7,7 +7,7 @@
 			<div class="featured-media">
 			
 				<a href="<?php the_permalink(); ?>" rel="bookmark">
-					<span class="visuallyhidden"><?php echo sprintf( __( 'Link to %s', get_the_title( ) ) ); ?></span>
+					<span class="visuallyhidden"><?php echo sprintf( __( 'Link to %s' ), get_the_title( ) ); ?></span>
 					<?php the_post_thumbnail( 'post-thumbnail' ); ?>
 				</a>
 						
