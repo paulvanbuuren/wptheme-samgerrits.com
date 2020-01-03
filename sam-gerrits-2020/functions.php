@@ -9,6 +9,18 @@ define( 'CHILD_THEME_URL', 'https://github.com/paulvanbuuren/Sam-Gerrits-WP-them
 define( 'CHILD_THEME_VERSION', '2.0.0' );
 define( 'CHILD_THEME_VERSION_DESCR', 'Base theme is Garfunkel' );
 
+define( 'DO_WRITE_STICKY', false );
+//========================================================================================================
+
+// Load translation files from your child theme instead of the parent theme
+function wbvb_samg_add_translations() {
+
+    load_child_theme_textdomain( 'garfunkel', get_stylesheet_directory() . '/languages' );
+
+}
+
+add_action( 'after_setup_theme', 'wbvb_samg_add_translations' );
+
 //========================================================================================================
 
 /* ---------------------------------------------------------------------------------------------
@@ -89,6 +101,63 @@ if ( ! function_exists( 'garfunkel_add_editor_styles' ) ) :
 
 	}
 	add_action( 'init', 'garfunkel_add_editor_styles' );
+
+endif;
+
+//========================================================================================================
+
+/* ---------------------------------------------------------------------------------------------
+   ENQUEUE SCRIPTS
+   --------------------------------------------------------------------------------------------- */
+
+
+if ( ! function_exists( 'garfunkel_load_javascript_files' ) ) :
+
+	function garfunkel_load_javascript_files() {
+
+		if ( ! is_admin() ) {
+			wp_register_script( 'garfunkel_flexslider', get_template_directory_uri() . '/js/flexslider.js', array(), '', true );
+
+			wp_enqueue_script( 'garfunkel_global', get_stylesheet_directory_uri() . '/js/min/global-min.js', array( 'jquery', 'imagesloaded', 'masonry', 'garfunkel_flexslider' ), CHILD_THEME_VERSION, true );
+			
+			if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
+		}
+	}
+	add_action( 'wp_enqueue_scripts', 'garfunkel_load_javascript_files' );
+
+endif;
+
+//========================================================================================================
+
+/* ---------------------------------------------------------------------------------------------
+   GARFUNKEL META FUNCTION
+   --------------------------------------------------------------------------------------------- */
+
+
+if ( ! function_exists( 'garfunkel_meta' ) ) :
+
+	function garfunkel_meta() { ?>
+
+		<div class="post-meta">
+
+			<a class="post-meta-date" href="<?php the_permalink(); ?>">
+				<div class="genericon genericon-time"></div>
+				<?php the_time( get_option( 'date_format' ) ); ?>
+			</a>
+
+			<?php if ( comments_open() ) : ?>
+				<a class="post-meta-comments" href="<?php the_permalink(); ?>#comments">
+					<div class="genericon genericon-comment"></div>
+					<?php comments_number( '0', '1', '%'); ?>
+				</a>
+			<?php endif; ?>
+
+			<div class="clear"></div>
+
+		</div><!-- .post-meta -->
+		
+		<?php
+	}
 
 endif;
 

@@ -432,13 +432,13 @@ if ( ! function_exists( 'garfunkel_meta' ) ) :
 
 		<div class="post-meta">
 
-			<a class="post-meta-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			<a class="post-meta-date" href="<?php the_permalink(); ?>">
 				<div class="genericon genericon-time"></div>
 				<?php the_time( get_option( 'date_format' ) ); ?>
 			</a>
 
 			<?php if ( comments_open() ) : ?>
-				<a class="post-meta-comments" href="<?php the_permalink(); ?>#comments" title="<?php printf( __( '%1$s comments to %2$s', 'garfunkel' ), get_comments_number(), the_title_attribute( array( 'echo' => false ) ) ); ?>">
+				<a class="post-meta-comments" href="<?php the_permalink(); ?>#comments">
 					<div class="genericon genericon-comment"></div>
 					<?php comments_number( '0', '1', '%'); ?>
 				</a>
@@ -611,13 +611,13 @@ class Garfunkel_Customize {
             'description' 	=> __('Allows you to customize settings for Garfunkel.', 'garfunkel'), //Descriptive tooltip
          ) 
       );
-      
+/*      
       $wp_customize->add_section( 'garfunkel_logo_section' , array(
 		    'title'       => __( 'Logo', 'garfunkel' ),
 		    'priority'    => 40,
 		    'description' => 'Upload a logo to replace the default site name and description in the header',
 		) );
-      
+*/      
       //2. Register new settings to the WP database...
       $wp_customize->add_setting( 'accent_color', //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
          array(
@@ -628,14 +628,14 @@ class Garfunkel_Customize {
       		'sanitize_callback' => 'sanitize_hex_color'
          ) 
       );
-      
+/*      
       // Add logo setting and sanitize it
       $wp_customize->add_setting( 'garfunkel_logo', 
       	array( 
       		'sanitize_callback' => 'esc_url_raw'
       	) 
       );
-                  
+*/                  
       //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
       $wp_customize->add_control( new WP_Customize_Color_Control( //Instantiate the color control class
          $wp_customize, //Pass the $wp_customize object (required)
@@ -647,12 +647,13 @@ class Garfunkel_Customize {
             'priority' 	=> 10, //Determines the order this control appears in for the specified section
          ) 
       ) );
-      
+/*      
       $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'garfunkel_logo', array(
 		    'label'   	=> __( 'Logo', 'garfunkel' ),
 		    'section' 	=> 'garfunkel_logo_section',
 		    'settings'	=> 'garfunkel_logo',
 		) ) );
+*/
       
       //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
       $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
