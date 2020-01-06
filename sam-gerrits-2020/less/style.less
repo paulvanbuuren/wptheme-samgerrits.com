@@ -60,4 +60,56 @@ Imports
 @import "garfunkel.style.less";
 
 
+.socialmedia_styling();
 
+
+footer.section-inner {
+	margin-top: 3rem;
+	padding-bottom: 3rem;
+
+	.widget_advanced_menu {
+		a {
+			padding-left: .5rem;
+			padding-right: .5rem;
+		}
+	}
+
+	.widget_advanced_menu,
+	.social-media-widget {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		li {
+			display: inline-block;
+			float: left;
+			& + li {
+				margin-left: 1rem;
+			}
+			&, a {
+				color: @wit;
+			}
+		}
+
+		.widgettitle {
+			.visuallyhidden();	
+		}
+		
+		a {
+			border: 1px solid transparent;
+			color: @wit;
+			line-height: 2;
+			display: block;
+
+			&:hover,
+			&:active,
+			&:focus {
+//				color: @txt;
+//				background-color: rgba(256,256,256,.8);
+				background-color: @menu_mobile_a_bg_hover;
+				
+//				border-color: @wit;
+			}
+		}
+	}
+}

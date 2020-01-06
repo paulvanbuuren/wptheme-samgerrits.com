@@ -69,7 +69,6 @@ blockquote:before, blockquote:after {
 	content:"";
 }
 
-a { outline:none; }
 
 input[type=search] {
    -moz-appearance:none;
@@ -278,7 +277,7 @@ a .post-icon img {
 	position: relative;
 }
 
-.section-inner.thin { width: 1140px; }
+//.section-inner.thin { width: 1140px; }
 
 .bg-image {
 	background-size: cover;
@@ -316,15 +315,20 @@ a .post-icon img {
 /* -------------------------------------------------------------------------------- */
 
 
-.title-section { position: relative; }
-
-.home-first-page .title-section .section-inner { padding: 150px 0; }
-
-.title-section .section-inner { 
-	padding: 75px 0; 
+.title-section { 
 	position: relative;
-	z-index: 10;
+	
+	.section-inner { 
+		padding: 150px 0;
+		position: relative;
+		z-index: 10;
+	}
 }
+
+.home-first-page .title-section .section-inner { 
+//	padding: 150px 0;
+ }
+
 
 .blog-title-area {
 	max-width: 65%;
@@ -384,7 +388,6 @@ a .post-icon img {
 	&:hover,
 	&:active,
 	&:focus {
-		color: yellow;
 		background: @black;
 	}
 	
@@ -507,6 +510,7 @@ a .post-icon img {
 		&:hover,
 		&:active,
 		&:focus {
+			background: @menu_mobile_a_bg_hover; 
 			color: @menu_a_color_hover;
 			text-decoration: underline;
 		}
@@ -1823,7 +1827,6 @@ img.alignright,
 .post-content input[type="password"]:focus,
 .post-content textarea:focus {
 	background: #fdfdfd;
-	outline: none;
 }
 
 .post-content input[type="submit"],
@@ -1848,10 +1851,6 @@ img.alignright,
 	color: #fff;
 }
 
-.post-content input[type="submit"]:focus,
-.post-content input[type="submit"]:active {
-	outline: none;
-}
 
 /* Gutenberg Accent Colors --------------------------------------- */
 
@@ -2383,7 +2382,6 @@ p.comment-form-author { margin-right: 5%; }
 .comment-form input[type="text"]:focus,
 .comment-form input[type="email"]:focus,
 .comment-form textarea:focus {
-	outline: none;
 	background-color: #fff;
 }
 
@@ -2542,7 +2540,6 @@ p.comment-form-author { margin-right: 5%; }
 	margin-top: -16px;
 }
 
-.search-form .search-field:focus { outline: none; }
 
 
 /* Archive template --------------------------------------- */
@@ -3041,24 +3038,34 @@ img#wpstats { display: none; }
 	
 	.toggle-container { display: block; }
 	
-	.mobile-menu li { border-top: 1px solid #333; }
+	.mobile-menu {
+
+		ul a { padding-left: 12%; }
+		ul ul a { padding-left: 16%; }
+		ul ul ul a { padding-left: 20%; }
+		ul ul ul ul a { padding-left: 24%; }
+		
+		li { 
+			border-top: 1px solid #333; 
+		}
+		
+		a {
+			display: block;
+			padding: 25px 8%;
+			font-size: 0.9em;
+			color: @menu_a_color;
 	
-	.mobile-menu a {
-		display: block;
-		padding: 25px 8%;
-		font-size: 0.9em;
-		color: @bettercontrasttext2;
+			&:hover,
+			&:active,
+			&:focus {
+				background: @menu_mobile_a_bg_hover; 
+				color: @menu_a_color_hover;
+				text-decoration: underline;
+			}
+		}
 	}
 	
-	.mobile-menu a:hover { 
-		background: #ca2017; 
-		color: #fff;
-	}
 	
-	.mobile-menu ul a { padding-left: 12%; }
-	.mobile-menu ul ul a { padding-left: 16%; }
-	.mobile-menu ul ul ul a { padding-left: 20%; }
-	.mobile-menu ul ul ul ul a { padding-left: 24%; }
 	
 	.mobile-menu-container .menu-social {
 		border-top: 1px solid #333;

@@ -10,6 +10,21 @@ define( 'CHILD_THEME_VERSION', '2.0.0' );
 define( 'CHILD_THEME_VERSION_DESCR', 'Base theme is Garfunkel' );
 
 define( 'DO_WRITE_STICKY', false );
+
+
+if ( ! defined( 'WBVB_SG_WIDGET_SOKMET_ID' ) ) {
+  define( 'WBVB_SG_WIDGET_SOKMET_ID', 'social-media-widget' );
+}
+if ( ! defined( 'WBVB_SG_WIDGET_SOKMET_NAME' ) ) {
+  define( 'WBVB_SG_WIDGET_SOKMET_NAME', 'Social media widget' );  // slug for custom taxonomy 'timeslot'
+}
+if ( ! defined( 'WBVB_SG_WIDGETAREA_ID' ) ) {
+  define( 'WBVB_SG_WIDGETAREA_ID', 'footer-widget-area' );  // slug for custom taxonomy 'timeslot'
+}
+
+require_once( get_stylesheet_directory() . '/includes/socialmedia-widget.php' );
+
+
 //========================================================================================================
 
 // Load translation files from your child theme instead of the parent theme
@@ -160,6 +175,37 @@ if ( ! function_exists( 'garfunkel_meta' ) ) :
 	}
 
 endif;
+
+//========================================================================================================
+
+/**
+ * Add a sidebar.
+ */
+
+if ( ! function_exists( 'garfunkel_sidebar_registration' ) ) :
+
+	function garfunkel_sidebar_registration() {
+	    register_sidebar( array(
+	        'name'          => __( 'Main Sidebar', 'textdomain' ),
+	        'id'            => WBVB_SG_WIDGETAREA_ID,
+	        'description'   => __( 'Widgets in the footer. Will be shown on all posts and pages.', 'textdomain' ),
+	        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	        'after_widget'  => '</div>',
+	        'before_title'  => '<h2 class="widgettitle">',
+	        'after_title'   => '</h2>',
+	    ) );
+	
+	
+//		unregister_sidebar( 'footer-a' );    
+//		unregister_sidebar( 'footer-b' );    
+//		unregister_sidebar( 'footer-c' );    
+		    
+	}
+
+	add_action( 'widgets_init', 'garfunkel_sidebar_registration' ); 
+
+endif;
+
 
 //========================================================================================================
 
