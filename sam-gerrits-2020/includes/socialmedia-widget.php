@@ -8,8 +8,8 @@
 // @package sam-gerrits-2020
 // @author  Paul van Buuren
 // @license GPL-2.0+
-// @version 2.0.0
-// @desc.   Base theme is Garfunkel
+// @version 2.0.1
+// @desc.   Social media widget toegevoegd
 // @link    https://github.com/ICTU/gebruiker-centraal-wordpress-theme
 
 //========================================================================================================

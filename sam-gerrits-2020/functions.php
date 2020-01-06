@@ -6,8 +6,8 @@
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Sam Gerrits 2020' );
 define( 'CHILD_THEME_URL', 'https://github.com/paulvanbuuren/Sam-Gerrits-WP-theme--2019-/' );
-define( 'CHILD_THEME_VERSION', '2.0.0' );
-define( 'CHILD_THEME_VERSION_DESCR', 'Base theme is Garfunkel' );
+define( 'CHILD_THEME_VERSION', '2.0.1' );
+define( 'CHILD_THEME_VERSION_DESCR', 'Social media widget toegevoegd' );
 
 define( 'DO_WRITE_STICKY', false );
 
