@@ -180,8 +180,8 @@
 										if ( ! empty( $prev_post ) ) : ?>
 										
 											<a class="post-nav-prev"  href="<?php echo get_permalink( $prev_post->ID ); ?>">
-												<p><?php _e( 'Previous post', 'garfunkel' ); ?></p>
-												<h4><?php echo get_the_title( $prev_post ); ?></h4>
+												<p><?php _e( 'Previous post', 'garfunkel' ); ?><br>
+												<span class="posttitle"><?php echo get_the_title( $prev_post ); ?></span></p>
 											</a>
 									
 										<?php endif;
@@ -190,8 +190,8 @@
 										if ( ! empty( $next_post ) ) : ?>
 											
 											<a class="post-nav-next" href="<?php echo get_permalink( $next_post->ID ); ?>">
-												<p><?php _e( 'Next post', 'garfunkel' ); ?></p>
-												<h4><?php echo get_the_title( $next_post ); ?></h4>
+												<p><?php _e( 'Next post', 'garfunkel' ); ?><br>
+												<span class="posttitle"><?php echo get_the_title( $next_post ); ?></span></p>
 											</a>
 									
 										<?php endif; ?>

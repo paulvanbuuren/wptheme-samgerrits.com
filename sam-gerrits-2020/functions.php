@@ -49,7 +49,7 @@ if ( ! function_exists( 'garfunkel_load_style' ) ) :
 		if ( ! is_admin() ) {
 
 			$dependencies = array();
-
+/
 			/**
 			 * Translators: If there are characters in your language that are not
 			 * supported by the theme fonts, translate this to 'off'. Do not translate
@@ -59,8 +59,9 @@ if ( ! function_exists( 'garfunkel_load_style' ) ) :
 
 			if ( 'off' !== $google_fonts ) {
 
-				// Register Google Fonts
-				wp_register_style( 'samgerrits_googleFonts', '//fonts.googleapis.com/css?family=Fira+Sans:400,500,700,400italic,700italic|Playfair+Display:400,900|Crimson+Text:700,400italic,700italic,400' );
+				wp_register_style( 'samgerrits_googleFonts', '//fonts.googleapis.com/css?family=Fira+Sans:400,500,700,400italic,700italic|Crimson+Text:700,400italic,700italic,400' );
+
+				
 				$dependencies[] = 'samgerrits_googleFonts';
 
 			}
@@ -72,6 +73,9 @@ if ( ! function_exists( 'garfunkel_load_style' ) ) :
 			// do not load CSS from plugins
 			wp_deregister_style( 'yarppWidgetCss' );
 			wp_deregister_style( 'contact-form-7' );
+
+
+			wp_register_style( 'typekit-font', 'https://use.typekit.net/ixb8iju.css' );
 
 			// get genericons from parent theme
 			wp_register_style( 'samgerrits_genericons', get_template_directory_uri() . '/genericons/genericons.css' );
