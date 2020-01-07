@@ -6,7 +6,7 @@
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Sam Gerrits 2020' );
 define( 'CHILD_THEME_URL', 'https://github.com/paulvanbuuren/Sam-Gerrits-WP-theme--2019-/' );
-define( 'CHILD_THEME_VERSION', '2.0.1' );
+define( 'CHILD_THEME_VERSION', '2.0.2' );
 define( 'CHILD_THEME_VERSION_DESCR', 'Social media widget toegevoegd' );
 
 define( 'DO_WRITE_STICKY', false );
@@ -49,7 +49,7 @@ if ( ! function_exists( 'garfunkel_load_style' ) ) :
 		if ( ! is_admin() ) {
 
 			$dependencies = array();
-/
+
 			/**
 			 * Translators: If there are characters in your language that are not
 			 * supported by the theme fonts, translate this to 'off'. Do not translate

@@ -319,16 +319,11 @@ a .post-icon img {
 	position: relative;
 	
 	.section-inner { 
-		padding: 150px 0;
+		padding: 125px 0;
 		position: relative;
 		z-index: 10;
 	}
 }
-
-.home-first-page .title-section .section-inner { 
-//	padding: 150px 0;
- }
-
 
 .blog-title-area {
 	max-width: 65%;
@@ -345,39 +340,61 @@ a .post-icon img {
 	}
 
 	.blog-title { 
-		background-image: url('images/sammoniet.png');
-		background-repeat: no-repeat;
-		background-position: left center;
-		background-size: 33px 40px;
-		padding-left: 40px;
 	
 		a {
 			display: inline-block;
-//			font-family: 'Playfair Display', serif;
 			font-family: copperplate, serif;
 			font-weight: 400;
-			font-size: 3.5em;
+			font-size: 1.5em;
 			color: #fff;
+			text-decoration: none;
+
+			&:hover,
+			&:active,
+			&:focus {
+				text-decoration: underline;
+			}
 		
 		}
+		
 
 		@media (max-width: 600px) {
+			background-image: url('images/sammoniet.png');
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: 20px 23px;
+			padding-left: 27px;
+			line-height: 1.25;
+		}
+		@media (min-width: 600px) {
 
-			background-size: 20px 25px;
-			padding-left: 30px;
-			
+			&:before { 
+				background-image: url('images/sammoniet.png');
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: contain;
+				content: ' ';
+				display: block;
+				height: 52px;
+				speak: none;
+			}
+		
 			a {
-				font-size: 1.5em;
+				font-size: 2.5em;
 			}	
-		}	
+		}
+		@media (min-width: 900px) {
+			a {
+				font-size: 3.5em;
+			}	
+		}
 	}
 
 	.blog-subtitle {
 		font-size: 1.1em;
-//		font-family: copperplate, serif;
 		font-weight: 400;
 		font-style: italic;
-		margin: .5rem 0 0 0;
+		margin: 0;
 		text-align: center;
 		color: @wit;
 
@@ -390,7 +407,8 @@ a .post-icon img {
 	&:hover,
 	&:active,
 	&:focus {
-		background: @black;
+//		background: @black;
+//		background: rgba( 1, 1, 1, .8 );
 	}
 	
 }
@@ -2426,26 +2444,50 @@ p.comment-form-author { margin-right: 5%; }
 
 .page-title { 
 	margin-bottom: 40px; 
-	text-align: center;
+	padding: 2rem;
+	background: @wit;
+	color: @txt;
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 1rem;
+		font-weight: 700;
+	}
+
+	p {
+		color: #666;
+		font-family: 'Crimson Text', serif;
+		font-size: 1.1em;
+		line-height: 140%;
+	}
+	h1, h2, h3, h4, h5, p {
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+
+	@media screen and (max-width: 600px) {
+		
+		max-width: 92%;
+		margin-left: auto;	
+		margin-right: auto;	
+		
+		
+		h1, h2, h3, h4, h5, h6 {
+			font-size: 1.25em;
+		}
+	}
+	@media screen and (min-width: 600px) {
+	
+		h1, h2, h3, h4, h5, h6 {
+			font-size: 2.25em;
+			text-align: center;
+		}
+	}
+
+	
 }
 
-.page-title h5 {
-	display: inline-block;
-	padding: 10px 10px 8px 10px;
-	background: #222;
-	font-size: 0.9em;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	color: #fff;
-}
-
-.page-description p {
-	color: #fff;
-	text-align: center;
-	font-style: italic;
-	margin-top: 1em;
-}
 
 
 /* Archive navigation --------------------------------------- */
@@ -3217,7 +3259,7 @@ img#wpstats { display: none; }
 	
 	.bg-image.master,
 	.bg-shader.master {
-		height: 400px;
+		height: 350px;
 	}
 
 	/* main content */
