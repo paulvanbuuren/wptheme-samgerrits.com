@@ -148,40 +148,6 @@ endif;
 
 //========================================================================================================
 
-/* ---------------------------------------------------------------------------------------------
-   GARFUNKEL META FUNCTION
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! function_exists( 'garfunkel_meta' ) ) :
-
-	function garfunkel_meta() { ?>
-
-		<div class="post-meta">
-
-			<a class="post-meta-date" href="<?php the_permalink(); ?>">
-				<div class="genericon genericon-time"></div>
-				<?php the_time( get_option( 'date_format' ) ); ?>
-			</a>
-
-			<?php if ( comments_open() ) : ?>
-				<a class="post-meta-comments" href="<?php the_permalink(); ?>#comments">
-					<div class="genericon genericon-comment"></div>
-					<?php comments_number( '0', '1', '%'); ?>
-				</a>
-			<?php endif; ?>
-
-			<div class="clear"></div>
-
-		</div><!-- .post-meta -->
-		
-		<?php
-	}
-
-endif;
-
-//========================================================================================================
-
 /**
  * Add a sidebar.
  */
@@ -210,6 +176,46 @@ if ( ! function_exists( 'garfunkel_sidebar_registration' ) ) :
 
 endif;
 
+//========================================================================================================
+
+/* ---------------------------------------------------------------------------------------------
+   GARFUNKEL META FUNCTION
+   --------------------------------------------------------------------------------------------- */
+
+
+if ( ! function_exists( 'garfunkel_meta' ) ) :
+
+	function garfunkel_meta() { ?>
+
+		<div class="post-meta">
+			
+			<div class="genericon genericon-time"></div>
+			<?php the_time( get_option( 'date_format' ) ); ?>
+			<?php
+			$countertje = 0;
+			$categories = get_the_terms( get_the_id(), 'category' );
+			foreach( $categories as $category ) {
+				$countertje++;
+				if ( 1 === $countertje ) {
+					echo '<div class="genericon genericon-tag"></div>&nbsp;';
+					echo $category->name;
+				}
+				else {
+					echo ', ' . $category->name;
+				}
+			}
+			?>
+			<div class="clear"></div>
+			
+		</div><!-- .post-meta -->
+		
+		<?php
+	}
+
+endif;
+
 
 //========================================================================================================
+
+
 
