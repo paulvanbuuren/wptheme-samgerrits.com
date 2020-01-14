@@ -1,8 +1,8 @@
 /*!
 Theme Name:             Sam Gerrits (2020)
 Description:            Wordpress-theme samgerrits.com
-Version:                2.0.2
-Version description:    Social media widget toegevoegd
+Version:                2.0.3
+Version description:    Contactformulier en headerimage opgelapt.
 Template:               garfunkel
 Text Domain:            garfunkel 
 Author:                 Anders Norén (modified by Paul van Buuren)
@@ -104,12 +104,17 @@ footer.section-inner {
 			&:hover,
 			&:active,
 			&:focus {
-//				color: @txt;
-//				background-color: rgba(256,256,256,.8);
 				background-color: @menu_mobile_a_bg_hover;
-				
-//				border-color: @wit;
 			}
 		}
+	}
+}
+
+#contact-form {
+	padding: 0;
+	border-style: none;
+	
+	input, textarea {
+		width: 100%;
 	}
 }

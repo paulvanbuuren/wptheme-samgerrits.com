@@ -6,8 +6,8 @@
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Sam Gerrits 2020' );
 define( 'CHILD_THEME_URL', 'https://github.com/paulvanbuuren/Sam-Gerrits-WP-theme--2019-/' );
-define( 'CHILD_THEME_VERSION', '2.0.2' );
-define( 'CHILD_THEME_VERSION_DESCR', 'Social media widget toegevoegd' );
+define( 'CHILD_THEME_VERSION', '2.0.3' );
+define( 'CHILD_THEME_VERSION_DESCR', 'Contactformulier en headerimage opgelapt.' );
 
 define( 'DO_WRITE_STICKY', false );
 
