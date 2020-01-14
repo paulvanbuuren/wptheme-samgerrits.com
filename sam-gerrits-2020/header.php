@@ -82,7 +82,7 @@
 			
 			<div class="bg-image master" style="background-image: url( <?php echo $header_image_url; ?> );"></div>
 			
-			<div class="bg-shader master"></div>
+			<div class="bg-shader master">&nbsp;</div>
 		
 			<div class="section-inner">
 			
