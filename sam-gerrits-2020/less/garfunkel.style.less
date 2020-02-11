@@ -91,7 +91,7 @@ input[type="search"]::-webkit-search-results-decoration {
 body {
 	background-color: #111;
 	border: none;
-	color: #444;
+	color: @body_color_default;
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 18px;
 	margin: 0;
@@ -101,14 +101,16 @@ body {
 body * { -webkit-font-smoothing: antialiased; }
 
 body a {
-	color: #ca2017;
-	text-decoration: none;
+	color: @a_color_default;
+	transition: all 0.1s ease-in-out;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: @a_color_hover;
+	}
 }
 
-body a:hover {
-	color: #ca2017;
-	text-decoration: none;
-}
 
 * { 
 	box-sizing: border-box; 
@@ -136,9 +138,6 @@ img {
 /* Transitions --------------------------------------- */
 
 
-body a {
-	 transition: all 0.1s ease-in-out;
-}
 
 .blog-title a,
 .post-title a,
@@ -1657,8 +1656,12 @@ code, kbd, pre {
 	padding: 2% 2.5%;
 	background: #333;
 	font-size: 0.8em;
-	color: #FFF;
 	border-radius: 6px;
+	
+	*, &, a {
+		color: @wit;
+	}
+	
 }
 
 .post-content p.has-drop-cap:first-letter {

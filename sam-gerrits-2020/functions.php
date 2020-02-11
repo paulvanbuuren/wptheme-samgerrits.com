@@ -6,8 +6,8 @@
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Sam Gerrits 2020' );
 define( 'CHILD_THEME_URL', 'https://github.com/paulvanbuuren/Sam-Gerrits-WP-theme--2019-/' );
-define( 'CHILD_THEME_VERSION', '2.0.4' );
-define( 'CHILD_THEME_VERSION_DESCR', 'Nieuw logo toegevoegd.' );
+define( 'CHILD_THEME_VERSION', '2.0.5' );
+define( 'CHILD_THEME_VERSION_DESCR', 'HSTS policy en links underline.' );
 
 define( 'DO_WRITE_STICKY', false );
 
@@ -216,6 +216,23 @@ endif;
 
 
 //========================================================================================================
+
+add_action( 'send_headers', 'wbvb_set_hsts_policy' );
+/**
+ * Enables the HTTP Strict Transport Security (HSTS) header.
+ *
+ * @since 2.0.5
+ */
+function wbvb_set_hsts_policy() {
+	
+	// 2 year expiration: 63072000
+	header( 'Strict-Transport-Security: max-age=63072000; includeSubDomains; preload' );
+	
+	
+}
+
+//========================================================================================================
+
 
 
 
