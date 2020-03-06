@@ -1,9 +1,11 @@
 /*---------------------------------------------------------------------------------
 
-	Theme Name: Garfunkel
+	Theme Name: Garfunkel afgeleide voor samgerrits.com
     Text Domain: garfunkel
-	Version: 1.19
-	Description: Garfunkel is a stylish and responsive Pinterest-style theme with Masonry layout. It features responsive and retina-ready design, support for six post formats (including a gallery slideshow), Block Editor/Gutenberg support, six custom widgets, two page templates, Jetpack Infinite Scroll support, and editor styles. Demo: https://www.andersnoren.se/themes/garfunkel/
+	Version: 2.0.6
+	Version description: Logo uploadmogelijkheid geactiveerd. Veel succes aan mijn opvolger. 
+	Description: 'sam-gerrits-2020' is ontwikkeld als WordPress-theme voor [samgerrits.com](https://samgerrits.com).  Ontwikkelaar is Paul van Buuren ([WBVB Rotterdam](https://wbvb.nl)). Theme is gebaseerd op Garfunkel door Anders Norén: [Garfunkel Theme](https://www.andersnoren.se/teman/garfunkel-wordpress-theme/) 
+	
 	Tags: blog, three-columns, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, portfolio
 	Author: Anders Norén
 	Author URI: https://www.andersnoren.se
@@ -356,35 +358,64 @@ a .post-icon img {
 			&:focus {
 				text-decoration: underline;
 			}
-		
 		}
-		
+
+
+		&.onredelijk {
+			display: flex;
+			flex-direction: column;
+			
+			span {
+				flex: 0 0 80px
+			}
+			a {
+				
+			}
+			img {
+				display: block;
+				max-height: 100px;
+				max-width: none;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+
 
 		@media (max-width: 600px) {
-			background-image: url('images/sammoniet-v2.svg');
-			background-repeat: no-repeat;
-			background-position: left center;
-			background-size: 20px 23px;
-			padding-left: 27px;
-			line-height: 1.25;
-		}
-		@media (min-width: 600px) {
 
-			&:before { 
-				background-image: url('images/sammoniet-v2.svg');
-				background-repeat: no-repeat;
-				background-position: center center;
-				background-size: contain;
-				content: ' ';
-				display: block;
-				height: 52px;
-				speak: none;
-			}
-		
+
+			&.redelijk {
+				border: 10px solid red;
+				& { 
+					background-repeat: no-repeat;
+					background-position: left center;
+					background-size: 20px 23px;
+					padding-left: 27px;
+					line-height: 1.25;
+					background-image: url('images/sammoniet-v2.svg');
+				}		
+			}		
+		}	
+			
+		@media (min-width: 600px) {
+			&.redelijk {
+				&:before { 
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: contain;
+					content: ' ';
+					display: block;
+					height: 52px;
+					speak: none;
+					background-image: url('images/sammoniet-v2.svg');
+				}		
+			}		
+
 			a {
 				font-size: 2.5em;
 			}	
-		}
+			
+		}		
 		@media (min-width: 900px) {
 			a {
 				font-size: 3.5em;

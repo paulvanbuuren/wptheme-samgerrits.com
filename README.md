@@ -9,9 +9,10 @@ Theme is gebaseerd op Garfunkel door Anders Norén: [Garfunkel Theme](https://ww
 * Paul van Buuren: paul@wbvb.nl
 
 ## Current version:
-2.0.5 - HSTS policy en links underline.
+2.0.6 - Logo uploadmogelijkheid geactiveerd. Veel succes aan mijn opvolger. 
 
 ## Version history
+* 2.0.6 - Logo uploadmogelijkheid geactiveerd. Veel succes aan mijn opvolger. 
 * 2.0.5 - HSTS policy en links underline.
 * 2.0.4 - Nieuw logo toegevoegd.
 * 2.0.3 - Contactformulier en headerimage opgelapt.

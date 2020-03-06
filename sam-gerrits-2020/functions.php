@@ -6,8 +6,8 @@
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Sam Gerrits 2020' );
 define( 'CHILD_THEME_URL', 'https://github.com/paulvanbuuren/Sam-Gerrits-WP-theme--2019-/' );
-define( 'CHILD_THEME_VERSION', '2.0.5' );
-define( 'CHILD_THEME_VERSION_DESCR', 'HSTS policy en links underline.' );
+define( 'CHILD_THEME_VERSION', '2.0.6' );
+define( 'CHILD_THEME_VERSION_DESCR', 'Logo uploadmogelijkheid geactiveerd. Veel succes aan mijn opvolger. ' );
 
 define( 'DO_WRITE_STICKY', false );
 
@@ -28,15 +28,26 @@ require_once( get_stylesheet_directory() . '/includes/socialmedia-widget.php' );
 //========================================================================================================
 
 // Load translation files from your child theme instead of the parent theme
-function wbvb_samg_add_translations() {
+function wbvb_samg_add_translations_and_sitelogo() {
 
     load_child_theme_textdomain( 'garfunkel', get_stylesheet_directory() . '/languages' );
 
+	$argslogo = array(
+		'height'      => 104,
+		'width'       => 762,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title' ),
+	);
+	add_theme_support( 'custom-logo', $argslogo );    
+
 }
 
-add_action( 'after_setup_theme', 'wbvb_samg_add_translations' );
+add_action( 'after_setup_theme', 'wbvb_samg_add_translations_and_sitelogo' );
 
 //========================================================================================================
+
+
 
 /* ---------------------------------------------------------------------------------------------
    ENQUEUE STYLES
@@ -221,7 +232,7 @@ add_action( 'send_headers', 'wbvb_set_hsts_policy' );
 /**
  * Enables the HTTP Strict Transport Security (HSTS) header.
  *
- * @since 2.0.5
+ * @since 2.0.6
  */
 function wbvb_set_hsts_policy() {
 	

@@ -119,23 +119,47 @@
 			        
 					</div>
 			
-				<?php elseif ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) : ?>
-								
-					<div class="blog-title-area">
+				<?php 
+					elseif ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) :
+				
+						echo '<div class="blog-title-area">';
 						
-						<h1 class="blog-title">
-							<a href="<?php echo esc_url( home_url() ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'title' ) ); ?></a>
-						</h1>
+						$cssclass 		= 'redelijk';
+						$inlinestyle 	= '';
+						$logo 			= '';
 						
-						<?php if ( get_bloginfo( 'description' ) ) : ?>
+						$tag1 			= 'p';
+						$tag2 			= 'p';
 						
-							<h2 class="blog-subtitle"><?php echo esc_attr( get_bloginfo( 'description' ) ); ?></h2>
+						if ( is_home() || is_front_page() ) {
+							$tag1 		= 'h1';
+							$tag2 		= 'h2';
+						}
+						
+						$custom_logo_id	= get_theme_mod( 'custom_logo' );
+						$logo 			= wp_get_attachment_image_src( $custom_logo_id , 'full' );
+	
+						if ( has_custom_logo() ) {
+							$cssclass 	= 'onredelijk';
+							$logo 		= '<span><img src="' . esc_url( $logo[0] ) . '" alt="Logo ' . get_bloginfo( 'name' ) . '"></span>';
+						}
+	
+						echo '<' . $tag1 . ' class="blog-title ' . $cssclass . '"' . $inlinestyle . '>';
+						echo '<a href="' . esc_url( home_url() ). '" rel="home">';	
+						echo $logo;
+						echo esc_attr( get_bloginfo( 'title' ) ) . '</a>';
+						echo '</' . $tag1 . '>';
+						
+						if ( get_bloginfo( 'description' ) ) : 
+						
+							echo '<' . $tag2 . ' class="blog-subtitle">' . esc_attr( get_bloginfo( 'description' ) ) . '</' . $tag2 . '>';
 							
-						<?php endif; ?>
-
-					</div>
-										
-				<?php endif; ?>
+						endif; 
+											
+						echo '</div>';
+					
+					endif; 
+				?>
 			
 			</div>
 		
