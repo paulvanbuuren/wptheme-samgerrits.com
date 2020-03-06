@@ -76,7 +76,7 @@ msgid "Sam Gerrits (2020)"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/paulvanbuuren/Sam-Gerrits-WP-theme--2019-"
+msgid "https://github.com/paulvanbuuren/wptheme-samgerrits.com"
 msgstr ""
 
 #. Description of the plugin/theme

@@ -5,7 +5,7 @@
 
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Sam Gerrits 2020' );
-define( 'CHILD_THEME_URL', 'https://github.com/paulvanbuuren/Sam-Gerrits-WP-theme--2019-/' );
+define( 'CHILD_THEME_URL', 'https://github.com/paulvanbuuren/wptheme-samgerrits.com/' );
 define( 'CHILD_THEME_VERSION', '2.0.6' );
 define( 'CHILD_THEME_VERSION_DESCR', 'Logo uploadmogelijkheid geactiveerd. Veel succes aan mijn opvolger. ' );
 
