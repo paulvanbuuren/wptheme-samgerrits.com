@@ -124,7 +124,7 @@
 				
 						echo '<div class="blog-title-area">';
 						
-						$cssclass 		= 'redelijk';
+						$cssclass 		= 'standaard-logo';
 						$inlinestyle 	= '';
 						$logo 			= '';
 						
@@ -140,7 +140,7 @@
 						$logo 			= wp_get_attachment_image_src( $custom_logo_id , 'full' );
 	
 						if ( has_custom_logo() ) {
-							$cssclass 	= 'onredelijk';
+							$cssclass 	= 'custom-logo';
 							$logo 		= '<span><img src="' . esc_url( $logo[0] ) . '" alt="Logo ' . get_bloginfo( 'name' ) . '"></span>';
 						}
 	

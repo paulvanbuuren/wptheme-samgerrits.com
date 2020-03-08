@@ -6,8 +6,8 @@
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Sam Gerrits 2020' );
 define( 'CHILD_THEME_URL', 'https://github.com/paulvanbuuren/wptheme-samgerrits.com/' );
-define( 'CHILD_THEME_VERSION', '2.0.6' );
-define( 'CHILD_THEME_VERSION_DESCR', 'Logo uploadmogelijkheid geactiveerd. Veel succes aan mijn opvolger. ' );
+define( 'CHILD_THEME_VERSION', '2.1.1' );
+define( 'CHILD_THEME_VERSION_DESCR', 'Versienummer opgehoogd om caching te voorkomen. Closure? ' );
 
 define( 'DO_WRITE_STICKY', false );
 
@@ -33,8 +33,8 @@ function wbvb_samg_add_translations_and_sitelogo() {
     load_child_theme_textdomain( 'garfunkel', get_stylesheet_directory() . '/languages' );
 
 	$argslogo = array(
-		'height'      => 104,
-		'width'       => 762,
+		'height'      => 100,
+		'width'       => 400,
 		'flex-height' => true,
 		'flex-width'  => true,
 		'header-text' => array( 'site-title' ),
@@ -85,7 +85,9 @@ if ( ! function_exists( 'garfunkel_load_style' ) ) :
 			wp_deregister_style( 'yarppWidgetCss' );
 			wp_deregister_style( 'contact-form-7' );
 
-
+			// copperplate font comes from here
+			// beste opvolger na mij, het kan zijn dat de licentie hiervoor straks niet meer
+			// geldig is en dus het font uit het logo verdwijnt. 
 			wp_register_style( 'typekit-font', 'https://use.typekit.net/ixb8iju.css' );
 
 			// get genericons from parent theme
@@ -232,7 +234,7 @@ add_action( 'send_headers', 'wbvb_set_hsts_policy' );
 /**
  * Enables the HTTP Strict Transport Security (HSTS) header.
  *
- * @since 2.0.6
+ * @since 2.1.1
  */
 function wbvb_set_hsts_policy() {
 	

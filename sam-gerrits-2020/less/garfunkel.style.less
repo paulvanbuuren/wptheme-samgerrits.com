@@ -2,8 +2,8 @@
 
 	Theme Name: Garfunkel afgeleide voor samgerrits.com
     Text Domain: garfunkel
-	Version: 2.0.6
-	Version description: Logo uploadmogelijkheid geactiveerd. Veel succes aan mijn opvolger. 
+	Version: 2.1.1
+	Version description: Versienummer opgehoogd om caching te voorkomen. Closure? 
 	Description: 'sam-gerrits-2020' is ontwikkeld als WordPress-theme voor [samgerrits.com](https://samgerrits.com).  Ontwikkelaar is Paul van Buuren ([WBVB Rotterdam](https://wbvb.nl)). Theme is gebaseerd op Garfunkel door Anders Norén: [Garfunkel Theme](https://www.andersnoren.se/teman/garfunkel-wordpress-theme/) 
 	
 	Tags: blog, three-columns, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, portfolio
@@ -361,7 +361,7 @@ a .post-icon img {
 		}
 
 
-		&.onredelijk {
+		&.custom-logo {
 			display: flex;
 			flex-direction: column;
 			
@@ -384,8 +384,7 @@ a .post-icon img {
 		@media (max-width: 600px) {
 
 
-			&.redelijk {
-				border: 10px solid red;
+			&.standaard-logo {
 				& { 
 					background-repeat: no-repeat;
 					background-position: left center;
@@ -398,7 +397,7 @@ a .post-icon img {
 		}	
 			
 		@media (min-width: 600px) {
-			&.redelijk {
+			&.standaard-logo {
 				&:before { 
 					background-repeat: no-repeat;
 					background-position: center center;
@@ -1039,7 +1038,6 @@ a .post-icon img {
 
 .post-quote blockquote {
 	display: block;
-//	font-family: 'Playfair Display', serif;
 	font-family: copperplate, serif;
 	font-size: 1.25em;
 	font-weight: 400;
